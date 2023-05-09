@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+main {
+    @apply w-screen min-h-screen bg-no-repeat text-white bg-primary;
+    /* background-image: url("/assets/images/coffee.jpg"); */
+    z-index: 1;
+}
+
+.navigation {
+    @apply border-none px-10 py-3 w-screen h-20;
+}
+
+.content {
+    @apply px-10;
+}
+
+.landing-header {
+    @apply text-4xl font-extrabold sm:text-5xl text-center;
+}
+
+.animate-slide-left {
+    @apply opacity-0 relative right-0 translate-y-1/2;
+    animation: slide-left 1.5s ease forwards;
+}
+
+.animate-slide-right {
+    @apply opacity-0 relative left-0 translate-y-1/2;
+    animation: slide-right 1.5s ease forwards;
+}
+
+.animate-slide-up {
+    @apply relative bottom-0 translate-y-1/2;
+    animation: slide-up 1s ease forwards;
+}
+
+.height-65 {
+    height: 65vh;
+}
+
+@keyframes slide-left {
+    0% {
+        opacity: 0;
+        right: 2%;
+    }
+    50% {
+        opacity: 0.5;
+        right: 0;
+    }
+    100% {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+@keyframes slide-right {
+    0% {
+        opacity: 0;
+        left: 2%;
+    }
+    50% {
+        opacity: 0.5;
+        left: 0;
+    }
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        bottom: -10px;
+    }
+    100% {
+        bottom: 0;
+    }
+}

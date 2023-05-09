@@ -11,6 +11,9 @@ module.exports = {
                 satoshi: ["Satoshi", "sans-serif"],
                 inter: ["Inter", "sans-serif"],
             },
+            colors: {
+                primary: "#224539",
+            },
         },
     },
     plugins: [],

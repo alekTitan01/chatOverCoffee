@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import LinkingButton from "./LinkingButton";
 
 type Props = {};
 
@@ -12,7 +15,11 @@ function Navigation({}: Props) {
                 height={50}
                 width={50}
             />
-            Navigations
+            <div className="flex-between gap-10">
+                <div className="font-bold hover:text-green-400 cursor-pointer hover:transition-all">
+                    Sign In
+                </div>
+            </div>
         </div>
     );
 }

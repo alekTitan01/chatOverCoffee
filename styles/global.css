@@ -4,21 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-main {
-    @apply w-screen min-h-screen bg-no-repeat text-white;
-    /* background-image: url("/assets/images/coffee.jpg"); */
-    z-index: 1;
-    background-color: #224539;
-}
-
-.navigation {
-    @apply border-none px-10 py-3 w-screen h-20;
-}
-
-.content {
-    @apply px-10;
-}
-
 .flex-start {
     @apply flex items-center justify-start;
 }
