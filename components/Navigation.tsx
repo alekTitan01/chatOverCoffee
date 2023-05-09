@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-import LinkingButton from "./LinkingButton";
+import LinkingButton from "./Buttons";
 
 type Props = {};
 
@@ -19,8 +19,8 @@ function Navigation({}: Props) {
                 />
             </Link>
             <div className="flex-between gap-10">
-                <Link href="/register">
-                    <div className="font-bold hover:text-green-400 cursor-pointer hover:transition-all">
+                <Link href="/login">
+                    <div className="font-bold hover:text-secondary cursor-pointer hover:transition-all">
                         Sign In
                     </div>
                 </Link>

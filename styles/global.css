@@ -19,3 +19,7 @@
 .flex-center {
     @apply flex items-center justify-center;
 }
+
+.glass {
+    backdrop-filter: blur(2px);
+}

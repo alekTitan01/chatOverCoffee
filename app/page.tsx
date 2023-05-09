@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import GuestSectionContainer from "@components/GuestSectionContainer";
-import LinkingButton from "@components/LinkingButton";
+import Buttons from "@components/Buttons";
 
 const Home = () => {
     return (
-        <GuestSectionContainer>
+        <GuestSectionContainer className="flex-center">
             <div className="flex-center flex-col gap-10">
                 <h1 className="landing-header animate-slide-left initial-slide-left">
                     Connect w/ Confidence
@@ -12,13 +13,14 @@ const Home = () => {
                 <p className="desc text-center text-xl animate-slide-right initial-slide-right">
                     Share your mind, life and blend recipe with your coffee bros
                 </p>
-                <LinkingButton className="animate-slide-up initial-slide-up">
-                    Sign Up
-                </LinkingButton>
+                <Link href="/register">
+                    <Buttons className="animate-slide-up initial-slide-up bg-white text-primary px-5 py-2 hover:bg-secondary hover:text-white">
+                        Sign Up
+                    </Buttons>
+                </Link>
             </div>
-            <div className="flex-center flex-row">
+            <div className="flex-center">
                 <Image
-                    // className="animate-slide-left"
                     src="/assets/images/coffee-image.png"
                     alt="This is coffee"
                     height={600}
