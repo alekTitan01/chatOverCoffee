@@ -1,11 +1,15 @@
-import { CSSProperties } from "react";
+import { FormValues } from "@utils/types/formTypes";
+import { UseFormRegister, RegisterOptions, FieldErrors } from "react-hook-form";
 
 type Props = {
-    name: string;
+    name: "email" | "password" | "userName";
     label: string;
     type: string;
     inputClass?: string;
     labelClass?: string;
+    register: UseFormRegister<FormValues>;
+    registerOptions?: RegisterOptions<FormValues>;
+    errors: FieldErrors<FormValues>;
 };
 
 const Inputs = ({
@@ -13,19 +17,26 @@ const Inputs = ({
     label,
     type,
     inputClass = "",
-    labelClass = "",
+    register,
+    registerOptions,
+    errors,
 }: Props) => {
+    const errorMessage = errors[name]?.message;
     return (
         <div className="inputBox">
             <input
                 className={`${inputClass}`}
                 type={type}
                 id={name}
-                name={name}
-                required
                 placeholder={label}
+                {...register(name, registerOptions)}
             />
             <span>{label}</span>
+            {errorMessage ? (
+                <p className="text-red-500 text-sm">{errorMessage}</p>
+            ) : (
+                <p className="text-white text-sm">Empty</p>
+            )}
         </div>
     );
 };

@@ -7,8 +7,8 @@ type Props = {};
 
 const Registration = (props: Props) => {
     return (
-        <GuestSectionContainer className="flex-center">
-            <div className="flex-center">
+        <GuestSectionContainer className="flex-center flex-wrap">
+            <div className="flex-center flex-grow">
                 <div className="bg-white text-primary shadow-md rounded-lg">
                     <SignupCard />
                 </div>
@@ -17,8 +17,8 @@ const Registration = (props: Props) => {
                 <Image
                     src="/assets/images/chat.png"
                     alt="Chat group"
-                    width={500}
-                    height={500}
+                    width={900}
+                    height={900}
                 />
             </div>
         </GuestSectionContainer>

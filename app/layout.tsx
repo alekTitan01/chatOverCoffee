@@ -15,7 +15,7 @@ export const metadata = {
 const RootLayout = ({ children }: Props) => {
     return (
         <html lang="en">
-            <body>
+            <body suppressHydrationWarning>
                 <main>
                     <Navigation />
                     <div className="content">{children}</div>

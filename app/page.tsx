@@ -5,7 +5,7 @@ import Buttons from "@components/Buttons";
 
 const Home = () => {
     return (
-        <GuestSectionContainer className="flex-center">
+        <GuestSectionContainer className="flex-center flex-wrap">
             <div className="flex-center flex-col gap-10">
                 <h1 className="landing-header animate-slide-left initial-slide-left">
                     Connect w/ Confidence

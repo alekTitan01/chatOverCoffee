@@ -1,8 +1,8 @@
 .registration-card {
     @apply bg-no-repeat bg-cover;
     background-image: url("/assets/images/coffee-white.jpg");
-    background-position-x: -13.5rem;
-    background-position-y: -12.5rem;
+    background-position-x: -9.5rem;
+    background-position-y: -18.5rem;
 }
 
 .inputBox {
