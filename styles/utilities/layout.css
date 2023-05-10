@@ -6,7 +6,7 @@
     }
 
     .navigation {
-        @apply border-none px-10 py-3 w-screen h-20;
+        @apply border-none pr-[55px] pl-10 py-3 w-screen h-20;
     }
 
     .content {
