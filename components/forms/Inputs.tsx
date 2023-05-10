@@ -32,7 +32,6 @@ const Inputs = ({
             <input
                 className={`${inputClass}`}
                 type={type}
-                id={name}
                 placeholder={label}
                 {...register(name, registerOptions)}
             />

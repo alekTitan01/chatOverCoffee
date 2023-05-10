@@ -14,10 +14,10 @@ function Navigation({}: Props) {
         <div className="navigation flex-between">
             <Link href="/">
                 <Image
-                    src="/assets/images/logo.jpg"
-                    alt="Chat over Coffee"
                     height={50}
                     width={50}
+                    src="/assets/images/logo.jpg"
+                    alt="Chat over Coffee"
                 />
             </Link>
             <div className="flex-between gap-10">

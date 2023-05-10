@@ -6,6 +6,7 @@ import { DevTool } from "@hookform/devtools";
 import Buttons from "@components/Buttons";
 import Inputs from "@components/forms/Inputs";
 import PasswordValidationUI from "./PasswordValidationUI";
+import { validity } from "@utils/constants/function";
 
 const passValidationInit = {
     numChar: false,
@@ -17,31 +18,17 @@ const passValidationInit = {
 
 const SignupCard = () => {
     const form = useForm<FieldValues>();
-    const { register, control, handleSubmit, formState } = form;
-    const { errors } = formState;
+    const {
+        register,
+        control,
+        handleSubmit,
+        formState: { errors },
+    } = form;
     const [passValidation, setPassValidation] = useState(passValidationInit);
 
-    const validation = (value: string) => {
-        let isNumChar = false;
-        let isCapital = false;
-        let isNumerical = false;
-        let isSpecial = false;
-
-        if (/.{8,}/.test(value)) {
-            isNumChar = true;
-        }
-
-        if (/[A-Z]+/.test(value)) {
-            isCapital = true;
-        }
-
-        if (/\d+/.test(value)) {
-            isNumerical = true;
-        }
-
-        if (/[!@#$%^&*()\-\+=\[\]{}|\\;:'",.<>\/?]+/g.test(value)) {
-            isSpecial = true;
-        }
+    const UIValidation = (value: string) => {
+        const { isNumChar, isCapital, isNumerical, isSpecial } =
+            validity(value);
 
         setPassValidation({
             numChar: isNumChar,
@@ -50,10 +37,14 @@ const SignupCard = () => {
             special: isSpecial,
             overall: isNumChar && isCapital && isNumerical && isSpecial,
         });
+    };
 
-        return isNumChar && isCapital && isNumerical && isSpecial
-            ? undefined
-            : "";
+    const validation = (value: string) => {
+        const { isNumChar, isCapital, isNumerical, isSpecial } =
+            validity(value);
+        return (
+            !isNumChar && !isCapital && !isNumerical && !isSpecial && undefined
+        );
     };
 
     const onRegistration = (data: FieldValues) => {
@@ -133,6 +124,9 @@ const SignupCard = () => {
                     errors={errors}
                     registerOptions={{
                         validate: validation,
+                        onChange(event) {
+                            UIValidation(event.target.value);
+                        },
                     }}
                 />
                 <PasswordValidationUI validation={passValidation} />
