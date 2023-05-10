@@ -4,22 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.flex-start {
-    @apply flex items-center justify-start;
-}
+/* base imports */
+@import "tailwindcss/base";
 
-.flex-between {
-    @apply flex items-center justify-between;
-}
+/* components imports */
+@import "tailwindcss/components";
+@import "components/flex";
+@import "components/glass";
 
-.flex-end {
-    @apply flex items-center justify-end;
-}
-
-.flex-center {
-    @apply flex items-center justify-center;
-}
-
-.glass {
-    backdrop-filter: blur(2px);
-}
+/* utilities imports */
+@import "tailwindcss/utilities";
+@import "utilities/layout";
+@import "utilities/modal";
+@import "utilities/registrationCard";

@@ -7,7 +7,6 @@ import Buttons from "@components/Buttons";
 import Inputs from "@components/forms/Inputs";
 import { FormValues } from "@utils/types/formTypes";
 import PasswordValidationUI from "./PasswordValidationUI";
-import "@styles/registrationCard.css";
 
 const passValidationInit = {
     numChar: false,
@@ -73,6 +72,30 @@ const SignupCard = () => {
                 noValidate
                 className="flex-center flex-col gap-4"
             >
+                <Inputs
+                    inputClass="input-register"
+                    labelClass="input-label"
+                    name="firstName"
+                    label="First Name"
+                    type="text"
+                    register={register}
+                    registerOptions={{
+                        required: "First name is required",
+                    }}
+                    errors={errors}
+                />
+                <Inputs
+                    inputClass="input-register"
+                    labelClass="input-label"
+                    name="lastName"
+                    label="Last Name"
+                    type="text"
+                    register={register}
+                    registerOptions={{
+                        required: "Last name is required",
+                    }}
+                    errors={errors}
+                />
                 <Inputs
                     inputClass="input-register"
                     labelClass="input-label"

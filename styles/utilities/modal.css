@@ -1,0 +1,7 @@
+@tailwind utilities;
+
+@layer utilities {
+    .modal-container {
+        @apply fixed inset-0 transition-colors flex items-center justify-center;
+    }
+}

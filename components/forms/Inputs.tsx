@@ -2,7 +2,7 @@ import { FormValues } from "@utils/types/formTypes";
 import { UseFormRegister, RegisterOptions, FieldErrors } from "react-hook-form";
 
 type Props = {
-    name: "email" | "password" | "userName";
+    name: "email" | "password" | "userName" | "firstName" | "lastName";
     label: string;
     type: string;
     inputClass?: string;

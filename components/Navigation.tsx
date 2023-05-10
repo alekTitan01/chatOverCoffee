@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import LinkingButton from "./Buttons";
+import Modal from "./Modal";
 
 type Props = {};
 
 function Navigation({}: Props) {
+    const [isSignInOpen, setIsSignInOpen] = useState(false);
     return (
         <div className="navigation flex-between">
             <Link href="/">
@@ -19,12 +20,16 @@ function Navigation({}: Props) {
                 />
             </Link>
             <div className="flex-between gap-10">
-                <Link href="/login">
-                    <div className="font-bold hover:text-secondary cursor-pointer hover:transition-all">
-                        Sign In
-                    </div>
-                </Link>
+                <div
+                    onClick={() => setIsSignInOpen(true)}
+                    className="font-bold hover:text-secondary cursor-pointer hover:transition-all"
+                >
+                    Sign In
+                </div>
             </div>
+            <Modal open={isSignInOpen} onClose={() => setIsSignInOpen(false)}>
+                Hello world
+            </Modal>
         </div>
     );
 }

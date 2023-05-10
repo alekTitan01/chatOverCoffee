@@ -1,0 +1,31 @@
+@tailwind utilities;
+
+@layer utilities {
+    .registration-card {
+        @apply bg-no-repeat bg-cover;
+        background-image: url("/assets/images/coffee-white.jpg");
+        background-position-x: -15rem;
+        background-position-y: -23rem;
+    }
+
+    .inputBox {
+        @apply relative w-64;
+    }
+
+    .inputBox input {
+        @apply w-full p-1 border-b border-black rounded-sm outline-none;
+    }
+
+    .inputBox span {
+        @apply absolute text-secondary left-0 pointer-events-none uppercase duration-500;
+    }
+
+    .inputBox input::placeholder {
+        @apply text-white;
+    }
+
+    .inputBox input:focus ~ span,
+    .inputBox input:not(:placeholder-shown) ~ span {
+        @apply text-primary -translate-y-5 text-sm;
+    }
+}
