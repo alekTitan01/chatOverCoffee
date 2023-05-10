@@ -1,0 +1,26 @@
+@tailwind utilities;
+
+@layer utilities {
+    .chat-card-container {
+        @apply text-black w-full grid grid-cols-12 gap-2 h-[80vh];
+    }
+
+    .chat-card-users {
+        @apply bg-slate-50 hidden sm:col-span-3 sm:block rounded-s-md p-4;
+    }
+
+    .chat-card-chatBox {
+        @apply bg-slate-50 col-span-12 sm:col-span-9 rounded-e-md p-4;
+    }
+
+    .chat-card-user-container {
+        @apply flex cursor-pointer items-start p-2 rounded-md hover:bg-secondary hover:transition-all duration-[20ms];
+    }
+
+    .chat-user-profile {
+        @apply relative overflow-hidden rounded-[50%];
+    }
+    .chat-user-profile img {
+        @apply w-full h-auto;
+    }
+}

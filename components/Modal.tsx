@@ -17,8 +17,8 @@ function Modal({ children, open, onClose, showClose = true }: Props) {
         >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className={`relative bottom-36 bg-white rounded-xl shadow-lg p-6 transition-all text-primary ${
-                    open ? "scale-100 opacity-100" : "scale-125 opacity-0 "
+                className={`modal-subContainer ${
+                    open ? "scale-100 opacity-100" : "scale-125 opacity-0"
                 }`}
             >
                 {showClose && (

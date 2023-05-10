@@ -2,6 +2,6 @@
 
 @layer components {
     .glass {
-        backdrop-filter: blur(2px);
+        @apply backdrop-blur-[2px];
     }
 }

@@ -2,9 +2,7 @@
 
 @layer utilities {
     main {
-        @apply w-screen min-h-screen bg-no-repeat text-white bg-primary;
-        /* background-image: url("/assets/images/coffee.jpg"); */
-        z-index: 1;
+        @apply w-screen min-h-screen bg-no-repeat text-white bg-primary z-[1];
     }
 
     .navigation {
@@ -32,6 +30,6 @@
     }
 
     .height-65 {
-        height: 65vh;
+        @apply h-[65vh];
     }
 }

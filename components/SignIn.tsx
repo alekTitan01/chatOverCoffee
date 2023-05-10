@@ -17,8 +17,10 @@ function SignIn() {
     };
 
     return (
-        <div className="flex-start flex-col py-2 px-4">
-            <h1 className="text-2xl text-primary font-bold mb-5">Login</h1>
+        <div className="py-8 px-16 rounded-lg">
+            <h1 className="text-3xl text-secondary font-bold mb-4 w-full glass rounded-md py-2">
+                Login
+            </h1>
             <form
                 onSubmit={handleSubmit(onSignIn)}
                 noValidate

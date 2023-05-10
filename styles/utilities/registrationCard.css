@@ -2,8 +2,7 @@
 
 @layer utilities {
     .registration-card {
-        @apply bg-no-repeat bg-cover;
-        background-image: url("/assets/images/coffee-white.jpg");
+        @apply bg-no-repeat bg-cover bg-[url("/assets/images/coffee-white.jpg")];
         background-position-x: -15rem;
         background-position-y: -23rem;
     }

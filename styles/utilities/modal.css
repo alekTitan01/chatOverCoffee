@@ -4,4 +4,10 @@
     .modal-container {
         @apply fixed inset-0 transition-colors flex items-center justify-center;
     }
+
+    .modal-subContainer {
+        @apply bg-no-repeat bg-cover relative bg-white rounded-xl shadow-lg p-6 transition-all text-primary bottom-[10vh] bg-[url("/assets/images/coffee-white.jpg")];
+        background-position-x: -9rem;
+        background-position-y: -15rem;
+    }
 }
