@@ -1,5 +1,10 @@
-import { FormValues } from "@utils/types/formTypes";
-import { UseFormRegister, RegisterOptions, FieldErrors } from "react-hook-form";
+import {
+    UseFormRegister,
+    RegisterOptions,
+    FieldValues,
+    FieldError,
+    DeepMap,
+} from "react-hook-form";
 
 type Props = {
     name: "email" | "password" | "userName" | "firstName" | "lastName";
@@ -7,9 +12,9 @@ type Props = {
     type: string;
     inputClass?: string;
     labelClass?: string;
-    register: UseFormRegister<FormValues>;
-    registerOptions?: RegisterOptions<FormValues>;
-    errors: FieldErrors<FormValues>;
+    register: UseFormRegister<FieldValues>;
+    registerOptions?: RegisterOptions<FieldValues>;
+    errors: DeepMap<FieldValues, FieldError>;
 };
 
 const Inputs = ({

@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import Buttons from "@components/Buttons";
 import Inputs from "@components/forms/Inputs";
-import { FormValues } from "@utils/types/formTypes";
 import PasswordValidationUI from "./PasswordValidationUI";
 
 const passValidationInit = {
@@ -17,7 +16,7 @@ const passValidationInit = {
 };
 
 const SignupCard = () => {
-    const form = useForm<FormValues>();
+    const form = useForm<FieldValues>();
     const { register, control, handleSubmit, formState } = form;
     const { errors } = formState;
     const [passValidation, setPassValidation] = useState(passValidationInit);
@@ -57,7 +56,7 @@ const SignupCard = () => {
             : "";
     };
 
-    const onRegistration = (data: FormValues) => {
+    const onRegistration = (data: FieldValues) => {
         console.log(data);
     };
 

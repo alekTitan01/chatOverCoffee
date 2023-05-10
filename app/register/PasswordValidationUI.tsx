@@ -13,19 +13,19 @@ type Props = {
 function PasswordValidationUI({ validation }: Props) {
     const validationArray = [
         {
-            display: "Must be 8 characters long",
+            display: "Must be 8 characters or more",
             status: validation?.numChar,
         },
         {
-            display: "Must have one or more capital letters",
+            display: "Must contain one or more capital letters",
             status: validation?.capital,
         },
         {
-            display: "Must have one or more numerical characters",
+            display: "Must contain one or more numerical characters",
             status: validation?.numerical,
         },
         {
-            display: "Must have one or more special characters",
+            display: "Must contain one or more special characters",
             status: validation?.special,
         },
     ];

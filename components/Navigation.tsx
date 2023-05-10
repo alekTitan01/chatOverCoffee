@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Link from "next/link";
 import Modal from "./Modal";
+import SignIn from "./SignIn";
 
 type Props = {};
 
@@ -28,7 +29,7 @@ function Navigation({}: Props) {
                 </div>
             </div>
             <Modal open={isSignInOpen} onClose={() => setIsSignInOpen(false)}>
-                Hello world
+                <SignIn />
             </Modal>
         </div>
     );
