@@ -27,4 +27,20 @@
     .inputBox input:not(:placeholder-shown) ~ span {
         @apply text-primary -translate-y-5 text-sm;
     }
+
+    .chat-message-form {
+        @apply w-full flex flex-row gap-2;
+    }
+
+    .chat-message-form input {
+        @apply border-2 border-slate-400 w-full rounded-lg focus:outline-none focus:ring-1 focus:ring-opacity-50;
+    }
+
+    .chat-message-form input::placeholder {
+        @apply px-2 text-sm text-slate-400;
+    }
+
+    .chat-message-form input:not(:placeholder-shown) {
+        @apply text-slate-500 text-sm px-2;
+    }
 }
