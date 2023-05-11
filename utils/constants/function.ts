@@ -1,3 +1,5 @@
+import { MessageType } from "@utils/types/main";
+
 export const validity = (value: string) => {
     let isNumChar = false;
     let isCapital = false;
@@ -25,4 +27,10 @@ export const validity = (value: string) => {
         isNumerical,
         isSpecial,
     };
+};
+
+export const sortDate = (messageData: MessageType[]) => {
+    return messageData.sort((a, b) => {
+        return new Date(a.date).valueOf() - new Date(b.date).valueOf();
+    });
 };

@@ -1,19 +1,11 @@
-"use client";
-
 import Image from "next/image";
 import React from "react";
-import { FieldValues, useForm } from "react-hook-form";
-import { BiSend } from "react-icons/bi";
+import ChatMessageForm from "./ChatMessageForm";
+import ChatMessages from "./ChatMessages";
+import { sortDate } from "@utils/constants/function";
+import { messageData } from "@utils/data/data";
 
 function ChatBox() {
-    const form = useForm<FieldValues>();
-
-    const { register, handleSubmit } = form;
-
-    const onMessage = (data: FieldValues) => {
-        console.log("data", data);
-    };
-
     return (
         <div className="flex justify-start flex-col h-full">
             <div className="flex-start flex-row">
@@ -32,22 +24,20 @@ function ChatBox() {
                     </span>
                 </div>
             </div>
-            <div className="rounded-lg m-4 h-full p-4">Hello</div>
-            <div className="w-full p-4">
-                <form
-                    noValidate
-                    onSubmit={handleSubmit(onMessage)}
-                    className="chat-message-form"
-                >
-                    <input
-                        {...register("message")}
-                        placeholder="Enter your message"
-                    />
-                    <button type="submit" className="flex-center">
-                        <BiSend className="text-slate-400 h-9 w-9 p-2 transition-all hover:bg-secondary hover:text-primary rounded-full border-2 border-slate-400 duration-200" />
-                    </button>
-                </form>
+            <div className="rounded-lg m-4 flex flex-col h-[56vh] items-start justify-end">
+                <div className="overflow-y-scroll h-full text-sm w-full">
+                    {sortDate(messageData).map((message) => (
+                        <ChatMessages
+                            message={message.message}
+                            senderId={message.sender_id}
+                            userId={1}
+                            senderAvatar={message.sender_avatar}
+                            date={message.date}
+                        />
+                    ))}
+                </div>
             </div>
+            <ChatMessageForm />
         </div>
     );
 }

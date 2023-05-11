@@ -33,11 +33,11 @@
     }
 
     .chat-message-form input {
-        @apply border-2 border-slate-400 w-full rounded-lg focus:outline-none focus:ring-1 focus:ring-opacity-50;
+        @apply border-2 border-slate-400 w-full rounded-lg focus:outline-none focus:ring-1 focus:ring-opacity-50 px-3 caret-slate-600;
     }
 
     .chat-message-form input::placeholder {
-        @apply px-2 text-sm text-slate-400;
+        @apply text-sm text-slate-400;
     }
 
     .chat-message-form input:not(:placeholder-shown) {
