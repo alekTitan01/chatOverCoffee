@@ -1,5 +1,7 @@
 import React, { ReactNode } from "react";
+import { useSession } from "next-auth/react";
 import Navigation from "@components/Navigation";
+import Provider from "@components/Provider";
 import "@styles/global.css";
 
 type Props = {
@@ -15,10 +17,12 @@ const RootLayout = ({ children }: Props) => {
     return (
         <html lang="en">
             <body suppressHydrationWarning>
-                <main>
-                    <Navigation />
-                    <div className="content">{children}</div>
-                </main>
+                <Provider>
+                    <main>
+                        <Navigation />
+                        <div className="content">{children}</div>
+                    </main>
+                </Provider>
             </body>
         </html>
     );

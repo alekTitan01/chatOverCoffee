@@ -17,7 +17,7 @@ function SignIn() {
     };
 
     return (
-        <div className="py-8 px-16 rounded-lg">
+        <div className="py-8 px-16 sm:px-16 rounded-lg">
             <h1 className="text-3xl text-secondary font-bold mb-4 w-full glass rounded-md py-2">
                 Login
             </h1>

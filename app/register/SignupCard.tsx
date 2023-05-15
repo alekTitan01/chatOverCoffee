@@ -52,7 +52,7 @@ const SignupCard = () => {
     };
 
     return (
-        <div className="py-8 px-16 registration-card rounded-lg">
+        <div className="py-8 px-8 sm:px-16 registration-card rounded-lg">
             <h3 className="text-3xl text-secondary font-bold mb-1 w-full glass rounded-md py-2">
                 Sign up
             </h3>

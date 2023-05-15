@@ -10,7 +10,7 @@
     }
 
     .content {
-        @apply px-10 h-full;
+        @apply px-4 sm:px-10 h-full;
     }
 
     .landing-header {
