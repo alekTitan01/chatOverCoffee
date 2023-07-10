@@ -9,12 +9,7 @@ type Props = {
     onClick?: () => void;
 };
 
-function Buttons({
-    children,
-    className = "",
-    type = "button",
-    onClick = () => {},
-}: Props) {
+function Buttons({ children, className = "", type = "button", onClick = () => {} }: Props) {
     return (
         <button
             onClick={onClick}

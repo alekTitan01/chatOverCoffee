@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
+import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@models/user";
 import { connecToDB } from "@utils/database/database";
 
@@ -31,6 +32,8 @@ const handler = NextAuth({
                         user_name: user.name?.replace(" ", "").toLowerCase(),
                         image: user.image,
                         email: user.email,
+                        name: user.name,
+                        password: "",
                     });
                 }
                 return true;

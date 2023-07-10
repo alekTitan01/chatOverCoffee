@@ -6,13 +6,7 @@ type Props = {
 };
 
 const GuestSectionContainer = ({ children, className }: Props) => {
-    return (
-        <section
-            className={`w-full content gap-6 flex-col md:flex-row-reverse ${className}`}
-        >
-            {children}
-        </section>
-    );
+    return <section className={`w-full content gap-6 flex-col md:flex-row-reverse ${className}`}>{children}</section>;
 };
 
 export default GuestSectionContainer;
